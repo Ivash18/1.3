@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Контакты</title>
+    <link rel="apple-touch-icon" sizes="57x57" href="иконка/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="иконка/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="иконка/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="иконка/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="иконка/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="иконка/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="иконка/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="иконка/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="иконка/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="иконка/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="иконка/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="иконка/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="иконка/favicon-16x16.png">
+    <link rel="manifest" href="иконка/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="иконка/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+    <script>
+        function init() {
+            var myMap = new ymaps.Map("map", {
+                center: [56.115213,38.854396], // Координаты (Москва для примера)   
+                zoom: 16
+            });
+
+            var myPlacemark = new ymaps.Placemark([56.115213,38.854396], {
+                hintContent: 'Магазин разливного пива',
+                balloonContent: 'Мы здесь!'
+            });
+
+            myMap.geoObjects.add(myPlacemark);
+        }
+
+        ymaps.ready(init);
+    </script>
+</head>
+<body>
+    <div class="spisoc">
+        <ul>
+            <li><a class="active" href="index.html">Главная</a></li>
+            <li><a href="каталог_товаров.html">Каталог товаров</a></li>
+            <li><a href="Онас.html">О нас</a></li>
+            <li><a href="Контакт.html">Контакты</a></li>
+            <li><a href="#">Личный кабинет</a></li>
+            <li style="float: right;"><input class="search" placeholder="Поиск..." type="search"></li>
+        </ul>
+    </div>
+    <h2>Наше местоположение</h2>
+    
+    <!-- Карта -->
+    <div id="map" style="width: 600px; height: 450px;"></div>
+</body>
+</html>
